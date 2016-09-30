@@ -1,0 +1,11 @@
+language: none
+build:
+  pre_ci_boot:
+     image_name: therickys93/ubuntu14swiftenv
+     image_tag: latest
+     pull: true
+  ci:
+    - swiftenv install 3.0
+    - swiftenv global 3.0
+    - swift build
+    - swift test
